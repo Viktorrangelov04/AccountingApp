@@ -3,7 +3,8 @@ package com.example.invoicesort.service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class fillingInvoice {
+public class Invoice {
+    private int counter;
     private int invoiceNumber;
     private LocalDate invoiceDate;
     private String partner;
@@ -14,7 +15,7 @@ public class fillingInvoice {
     private BigDecimal baseAmount;
     private BigDecimal vatAmount;
 
-    public fillingInvoice(int invoiceNumber, LocalDate invoiceDate, String partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate,  BigDecimal baseAmount, BigDecimal vatAmount) {
+    public Invoice(int invoiceNumber, LocalDate invoiceDate, String partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal baseAmount, BigDecimal vatAmount) {
         this.invoiceNumber = invoiceNumber;
         this.invoiceDate = invoiceDate;
         this.partner = partner;
@@ -25,6 +26,9 @@ public class fillingInvoice {
         this.vatAmount = BigDecimal.ZERO;
     }
 
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
     public void printInvoice(){
         System.out.println("Invoice Number: " + this.invoiceNumber + "\n" + "Date:" + this.invoiceDate
                 + "\n" +"partner:" + this.partner + "\n" + "invoiceType:" + this.invoiceType
