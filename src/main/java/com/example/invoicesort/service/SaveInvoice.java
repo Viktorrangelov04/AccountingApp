@@ -5,7 +5,7 @@ import java.io.IOException;
 public class SaveInvoice {
     private Invoice invoice;
 
-    public void fillingInvoice(Invoice invoice) throws IOException {
+    public void saveInvoice(Invoice invoice) throws IOException {
         InvoiceStorage storage = new InvoiceStorage();
         storage.loadCounter();
         int counter = storage.getNextInvoiceNumber();

@@ -13,9 +13,9 @@ public class Invoice {
     private LocalDate exportDate;
     private BigDecimal baseAmount;
     private BigDecimal vatAmount;
-    private BigDecimal totalPrice;
+    private BigDecimal totalAmount;
 
-    public Invoice(int invoiceNumber, LocalDate invoiceDate, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal baseAmount, BigDecimal vatAmount, BigDecimal totalPrice) {
+    public Invoice(int invoiceNumber, LocalDate invoiceDate, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal baseAmount, BigDecimal vatAmount, BigDecimal totalAmount) {
         this.invoiceNumber = invoiceNumber;
         this.invoiceDate = invoiceDate;
         this.partner = partner;
@@ -24,7 +24,7 @@ public class Invoice {
         this.exportDate = exportDate;
         this.baseAmount = BigDecimal.ZERO;
         this.vatAmount = BigDecimal.ZERO;
-        this.totalPrice = totalPrice;
+        this.totalAmount = totalAmount;
     }
 
     public int getCounter() {
@@ -54,8 +54,8 @@ public class Invoice {
     public BigDecimal getVatAmount() {
         return vatAmount;
     }
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
     public void setCounter(int counter) {
@@ -85,8 +85,8 @@ public class Invoice {
     public void setVatAmount(BigDecimal vatAmount) {
         this.vatAmount = vatAmount;
     }
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public void printInvoice(){

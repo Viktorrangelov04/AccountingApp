@@ -17,6 +17,7 @@ public class Partner {
         this.country = country;
     }
 
+    public Partner() {}
     public String getPartnerName() {
         return partnerName;
     }
