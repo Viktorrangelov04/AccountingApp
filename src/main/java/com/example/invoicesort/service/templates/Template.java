@@ -1,4 +1,9 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.service.templates;
+
+import com.example.invoicesort.service.businesses.Partner;
+import com.example.invoicesort.service.invoicing.Invoice;
+import com.example.invoicesort.service.invoicing.TransactionType;
+import com.example.invoicesort.service.invoicing.VATReturnType;
 
 import java.math.BigDecimal;
 

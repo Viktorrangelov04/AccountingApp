@@ -1,4 +1,4 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.service.invoicing;
 
 public enum VATReturnType {
     FULL,

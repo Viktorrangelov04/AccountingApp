@@ -1,4 +1,6 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.service.invoicing;
+
+import com.example.invoicesort.storage.InvoiceStorage;
 
 import java.io.IOException;
 

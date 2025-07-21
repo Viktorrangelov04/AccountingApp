@@ -1,5 +1,6 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.storage;
 
+import com.example.invoicesort.service.templates.Template;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;

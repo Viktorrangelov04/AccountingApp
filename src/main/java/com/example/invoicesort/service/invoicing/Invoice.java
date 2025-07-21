@@ -1,4 +1,6 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.service.invoicing;
+
+import com.example.invoicesort.service.businesses.Partner;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

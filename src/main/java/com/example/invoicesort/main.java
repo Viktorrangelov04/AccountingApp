@@ -1,15 +1,14 @@
 package com.example.invoicesort;
 
-import com.example.invoicesort.service.*;
+import com.example.invoicesort.service.accounts.Account;
+import com.example.invoicesort.service.accounts.ChartOfAccounts;
+import com.example.invoicesort.service.businesses.Partner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.invoicesort.service.ChartOfAccounts.loadAccounts;
-import static com.example.invoicesort.service.ChartOfAccounts.printChartOfAccounts;
+import static com.example.invoicesort.service.accounts.ChartOfAccounts.printChartOfAccounts;
 
 @SpringBootApplication
 public class main {

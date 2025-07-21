@@ -1,5 +1,6 @@
-package com.example.invoicesort.service;
+package com.example.invoicesort.storage;
 
+import com.example.invoicesort.service.invoicing.Invoice;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
