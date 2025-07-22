@@ -16,8 +16,6 @@ public class Template {
      private BigDecimal vatAmount;
      private BigDecimal totalPrice;
 
-
-
      public Template(String name, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, BigDecimal baseAmount, BigDecimal vatAmount, BigDecimal totalPrice) {
          this.name = name;
          this.partner = partner;
@@ -28,7 +26,7 @@ public class Template {
          this.totalPrice = totalPrice;
      }
 
-    public Template(){};
+     public Template(){};
 
      public String getName() {
          return name;
@@ -54,6 +52,5 @@ public class Template {
 
      public void SaveTeplate(Invoice invoice, String name){
          Template template  = new Template(name, invoice.getPartner(), invoice.getTransactionType(), invoice.getVatReturnType(), invoice.getBaseAmount(), invoice.getVatAmount(), invoice.getTotalAmount());
-
      }
 }

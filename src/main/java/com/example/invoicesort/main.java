@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 import java.util.List;
 
-import static com.example.invoicesort.service.accounts.ChartOfAccounts.printChartOfAccounts;
 
 @SpringBootApplication
 public class main {
@@ -30,7 +29,7 @@ public class main {
 //
 //        TemplateDisplay display = new TemplateDisplay();
 //        display.DisplayTemplates();
-        List<Account> accounts = ChartOfAccounts.loadAccounts();
-        printChartOfAccounts(accounts);
+        //List<Account> accounts = ChartOfAccounts.loadAccounts();
+        //printChartOfAccounts(accounts);
     }
 }

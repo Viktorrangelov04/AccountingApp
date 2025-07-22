@@ -1,9 +1,12 @@
 package com.example.invoicesort.service.invoicing;
 
 import com.example.invoicesort.service.businesses.Partner;
+import com.example.invoicesort.service.inputs.Field;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Invoice {
     private int counter;
@@ -13,19 +16,17 @@ public class Invoice {
     private TransactionType transactionType;
     private VATReturnType vatReturnType;
     private LocalDate exportDate;
-    private BigDecimal baseAmount;
-    private BigDecimal vatAmount;
+    private List<Field> fields;
     private BigDecimal totalAmount;
 
-    public Invoice(int invoiceNumber, LocalDate invoiceDate, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal baseAmount, BigDecimal vatAmount, BigDecimal totalAmount) {
+    public Invoice(int invoiceNumber, LocalDate invoiceDate, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal totalAmount) {
         this.invoiceNumber = invoiceNumber;
         this.invoiceDate = invoiceDate;
         this.partner = partner;
         this.transactionType = transactionType;
         this.vatReturnType = vatReturnType;
         this.exportDate = exportDate;
-        this.baseAmount = BigDecimal.ZERO;
-        this.vatAmount = BigDecimal.ZERO;
+        this.fields = new ArrayList<>();
         this.totalAmount = totalAmount;
     }
 
@@ -50,11 +51,8 @@ public class Invoice {
     public LocalDate getExportDate() {
         return exportDate;
     }
-    public BigDecimal getBaseAmount() {
-        return baseAmount;
-    }
-    public BigDecimal getVatAmount() {
-        return vatAmount;
+    public List<Field> getFields() {
+        return fields;
     }
     public BigDecimal getTotalAmount() {
         return totalAmount;
@@ -81,11 +79,8 @@ public class Invoice {
     public void setExportDate(LocalDate exportDate) {
         this.exportDate = exportDate;
     }
-    public void setBaseAmount(BigDecimal baseAmount) {
-        this.baseAmount = baseAmount;
-    }
-    public void setVatAmount(BigDecimal vatAmount) {
-        this.vatAmount = vatAmount;
+    public void setFields(List<Field> fields) {
+        this.fields = fields;
     }
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;

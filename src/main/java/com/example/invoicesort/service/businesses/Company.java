@@ -1,9 +1,12 @@
 package com.example.invoicesort.service.businesses;
 
+import com.example.invoicesort.service.accounts.ChartOfAccounts;
+import com.example.invoicesort.service.templates.Template;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Business {
+public class Company {
     private String businessName;
     private int businessEik;
     private String vatNumber;
@@ -11,8 +14,10 @@ public class Business {
     private String city;
     private String address;
     private List<Partner> partners;
+    private List<Template> templates;
+    private ChartOfAccounts chartOfAccounts;
 
-    public Business(String businessName, int businessEik, String vatNumber, String country, String city, String address) {
+    public Company(String businessName, int businessEik, String vatNumber, String country, String city, String address) {
         this.businessName = businessName;
         this.businessEik = businessEik;
         this.vatNumber = vatNumber;
@@ -60,6 +65,10 @@ public class Business {
     }
     public List<Partner> getPartners() {
         return partners;
+    }
+
+    public ChartOfAccounts getChartOfAccounts() {
+        return chartOfAccounts;
     }
 
     public void addPartner(Partner partner) {
