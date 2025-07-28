@@ -1,28 +1,28 @@
 package com.example.invoicesort.service.templates;
 
 import com.example.invoicesort.service.businesses.Partner;
+import com.example.invoicesort.service.inputs.Field;
 import com.example.invoicesort.service.invoicing.Invoice;
 import com.example.invoicesort.service.invoicing.TransactionType;
 import com.example.invoicesort.service.invoicing.VATReturnType;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Template {
      private String name;
      private Partner partner;
      private TransactionType transactionType;
      private VATReturnType vatReturnType;
-     private BigDecimal baseAmount;
-     private BigDecimal vatAmount;
+     private List<Field> fields;
      private BigDecimal totalPrice;
 
-     public Template(String name, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, BigDecimal baseAmount, BigDecimal vatAmount, BigDecimal totalPrice) {
+     public Template(String name, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, List<Field> fields, BigDecimal totalPrice) {
          this.name = name;
          this.partner = partner;
          this.transactionType = transactionType;
          this.vatReturnType = vatReturnType;
-         this.baseAmount = baseAmount;
-         this.vatAmount = vatAmount;
+         this.fields = fields;
          this.totalPrice = totalPrice;
      }
 
@@ -32,25 +32,22 @@ public class Template {
          return name;
      }
      public Partner getPartner() {
-         return this.partner;
+         return partner;
      }
      public TransactionType getTransactionType() {
-         return this.transactionType;
+         return transactionType;
      }
      public VATReturnType getVatReturnType() {
-         return this.vatReturnType;
+         return vatReturnType;
      }
-     public BigDecimal getBaseAmount() {
-         return this.baseAmount;
-     }
-     public BigDecimal getVatAmount() {
-         return this.vatAmount;
+     public List<Field> getFields() {
+         return fields;
      }
      public BigDecimal getTotalPrice() {
-         return this.totalPrice;
+         return totalPrice;
      }
 
      public void SaveTeplate(Invoice invoice, String name){
-         Template template  = new Template(name, invoice.getPartner(), invoice.getTransactionType(), invoice.getVatReturnType(), invoice.getBaseAmount(), invoice.getVatAmount(), invoice.getTotalAmount());
+         Template template  = new Template(name, invoice.getPartner(), invoice.getTransactionType(), invoice.getVatReturnType(), invoice.getFields(), invoice.getTotalAmount());
      }
 }

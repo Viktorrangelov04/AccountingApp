@@ -3,8 +3,8 @@ package com.example.invoicesort.service.businesses;
 import com.example.invoicesort.service.accounts.ChartOfAccounts;
 import com.example.invoicesort.service.invoicing.Invoice;
 import com.example.invoicesort.service.templates.Template;
-import com.example.invoicesort.storage.InvoiceStorage;
-import com.example.invoicesort.storage.TemplateStorage;
+import com.example.invoicesort.service.invoicing.InvoiceStorage;
+import com.example.invoicesort.service.templates.TemplateStorage;
 
 import java.util.ArrayList;
 import java.util.List;
