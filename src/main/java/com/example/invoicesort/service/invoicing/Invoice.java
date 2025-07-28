@@ -18,6 +18,7 @@ public class Invoice {
     private LocalDate exportDate;
     private List<Field> fields;
     private BigDecimal totalAmount;
+    private boolean paid;
 
     public Invoice(int invoiceNumber, LocalDate invoiceDate, Partner partner, TransactionType transactionType, VATReturnType vatReturnType, LocalDate exportDate, BigDecimal totalAmount) {
         this.invoiceNumber = invoiceNumber;
@@ -28,6 +29,7 @@ public class Invoice {
         this.exportDate = exportDate;
         this.fields = new ArrayList<>();
         this.totalAmount = totalAmount;
+        this.paid = false;
     }
 
     public int getCounter() {
@@ -57,7 +59,9 @@ public class Invoice {
     public BigDecimal getTotalAmount() {
         return totalAmount;
     }
-
+    public boolean isPaid() {
+        return paid;
+    }
     public void setCounter(int counter) {
         this.counter = counter;
     }
@@ -85,7 +89,9 @@ public class Invoice {
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
-
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
     public void printInvoice(){
         System.out.println("Invoice Number: " + this.invoiceNumber + "\n" + "Date:" + this.invoiceDate
                 + "\n" +"partner:" + this.partner + "\n" + "invoiceType:" +  "transactionType:" + this.transactionType + "\n" + "VATReturnType:" + this.vatReturnType);

@@ -1,5 +1,6 @@
 package com.example.invoicesort.storage;
 
+import com.example.invoicesort.service.businesses.Company;
 import com.example.invoicesort.service.templates.Template;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,9 +14,12 @@ import java.util.Comparator;
 import java.util.List;
 
 public class TemplateStorage {
+    private Company company;
     public static final String TEMPLATE_STORAGE = "templates";
 
-    public TemplateStorage(){}
+    public TemplateStorage(Company company){
+        this.company = company;
+    }
 
     public void saveTemplate(Template template) throws IOException {
         if (template == null || template.getName() == null || template.getName().isEmpty())

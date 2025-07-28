@@ -1,5 +1,6 @@
 package com.example.invoicesort.storage;
 
+import com.example.invoicesort.service.businesses.Company;
 import com.example.invoicesort.service.invoicing.Invoice;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
@@ -8,13 +9,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class InvoiceStorage {
-    private static final String INVOICE_FOLDER = "invoices";
-    private static final String INVOICE_COUNTER = "invoices/INVOICE_COUNTER";
+    private Company company;
+    private final String INVOICE_FOLDER;
+    private final String INVOICE_COUNTER;
     private int lastInvoiceNumber;
+
+    public InvoiceStorage(Company company) {
+        this.company = company;
+        this.INVOICE_FOLDER = "invoices/" + company.getName() + "/";
+        this.INVOICE_COUNTER = INVOICE_FOLDER + "INVOICE_COUNTER";
+    }
 
     public int getLastInvoiceNumber() {
         return lastInvoiceNumber;
     }
+    public Company getCompany() {
+        return company;
+    }
+
     public void loadCounter(){
         try{
             Path path = Path.of(INVOICE_FOLDER);

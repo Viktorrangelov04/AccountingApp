@@ -1,43 +1,54 @@
 package com.example.invoicesort.service.businesses;
 
 import com.example.invoicesort.service.accounts.ChartOfAccounts;
+import com.example.invoicesort.service.invoicing.Invoice;
 import com.example.invoicesort.service.templates.Template;
+import com.example.invoicesort.storage.InvoiceStorage;
+import com.example.invoicesort.storage.TemplateStorage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Company {
-    private String businessName;
-    private int businessEik;
+    private String name;
+    private int eik;
     private String vatNumber;
     private String country;
     private String city;
     private String address;
+    private ChartOfAccounts chartOfAccounts;
     private List<Partner> partners;
     private List<Template> templates;
-    private ChartOfAccounts chartOfAccounts;
+    private List<Invoice> invoices;
+    private InvoiceStorage invoiceStorage;
+    private TemplateStorage templateStorage;
 
-    public Company(String businessName, int businessEik, String vatNumber, String country, String city, String address) {
-        this.businessName = businessName;
-        this.businessEik = businessEik;
+
+    public Company(String name, int eik, String vatNumber, String country, String city, String address) {
+        this.name = name;
+        this.eik = eik;
         this.vatNumber = vatNumber;
         this.country = country;
         this.city = city;
         this.address = address;
         this.partners = new ArrayList<>();
+        this.templates = new ArrayList<>();
+        this.invoices = new ArrayList<>();
+        this.invoiceStorage = new InvoiceStorage(this);
+        this.templateStorage = new TemplateStorage(this);
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public String getName() {
+        return name;
     }
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
+    public void setName(String Name) {
+        this.name = Name;
     }
-    public int getBusinessEik() {
-        return businessEik;
+    public int getEik() {
+        return eik;
     }
-    public void setBusinessEik(int businessEik) {
-        this.businessEik = businessEik;
+    public void setBusinessEik(int eik) {
+        this.eik = eik;
     }
     public String getVatNumber() {
         return vatNumber;
@@ -69,6 +80,14 @@ public class Company {
 
     public ChartOfAccounts getChartOfAccounts() {
         return chartOfAccounts;
+    }
+
+    public InvoiceStorage getInvoiceStorage(){
+        return invoiceStorage;
+    }
+
+    public TemplateStorage getTemplateStorage(){
+        return templateStorage;
     }
 
     public void addPartner(Partner partner) {
